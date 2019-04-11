@@ -76,14 +76,14 @@ describe('action creator', () => {
 
     describe('enableMetamsk', () => {
       beforeAll(() => {
-        ;(global as any).ethereum = jest.fn()
-        ;(global as any).ethereum.enable = jest
+        ; (global as any).ethereum = jest.fn()
+        ; (global as any).ethereum.enable = jest
           .fn()
           .mockResolvedValue(undefined)
       })
 
       afterEach(() => {
-        ;(global as any).ethereum.enable = jest.fn().mockReset()
+        ; (global as any).ethereum.enable = jest.fn().mockReset()
       })
 
       it('should not dispatch anything with not metamask', async () => {
@@ -101,7 +101,7 @@ describe('action creator', () => {
             type: '@@redux-web3/setMetamaskPrivacyMode',
           },
         ]
-        ;(global as any).ethereum.enable = jest
+        ; (global as any).ethereum.enable = jest
           .fn()
           .mockResolvedValue(undefined)
         const store = mockStore({ web3: { isMetamask: true } })
@@ -119,7 +119,7 @@ describe('action creator', () => {
           type: '@@redux-web3/setMetamaskPrivacyMode',
         },
       ]
-      ;(global as any).ethereum.enable = jest
+      ; (global as any).ethereum.enable = jest
         .fn()
         .mockRejectedValue(new Error('Async error'))
       const store = mockStore({ web3: { isMetamask: true } })
