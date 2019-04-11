@@ -1,4 +1,4 @@
-# redux-web3
+# redux-reducer-web3
 
 ## IMPLEMENTING NOW
 

@@ -1,5 +1,5 @@
 {
-  "name": "redux-web3",
+  "name": "redux-reducer-web3",
   "version": "0.1.0",
   "description": "web3 redux reducer",
   "main": "lib/index.js",
@@ -72,9 +72,9 @@
       "text-summary"
     ]
   },
-  "homepage": "https://github.com/tomonari-t/redux-web3",
+  "homepage": "https://github.com/tomonari-t/redux-reducer-web3",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tomonari-t/redux-web3.git"
+    "url": "https://github.com/tomonari-t/redux-reducer-web3.git"
   }
 }
