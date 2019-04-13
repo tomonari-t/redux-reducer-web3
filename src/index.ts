@@ -1,6 +1,7 @@
 import { Dispatch } from 'redux'
 import actionCreatorFactory from 'typescript-fsa'
 import { reducerWithInitialState } from 'typescript-fsa-reducers'
+// tslint:disable-next-line:no-var-requires
 const Web3 = require('web3')
 
 export enum WalletConnectedNetWork {
