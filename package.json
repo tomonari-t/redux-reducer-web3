@@ -1,6 +1,6 @@
 {
   "name": "redux-reducer-web3",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "web3 redux reducer",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
