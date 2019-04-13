@@ -123,7 +123,7 @@ export const updateWeb3 = () => async (
  */
 
 export interface IWeb3State {
-  web3Instance: web3 | undefined
+  web3Instance: Web3 | undefined
   userWalletAddress: string
   network: WalletConnectedNetWork
   status: WalletStatus
