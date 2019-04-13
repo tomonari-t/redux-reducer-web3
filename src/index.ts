@@ -1,7 +1,7 @@
 import { Dispatch } from 'redux'
 import actionCreatorFactory from 'typescript-fsa'
 import { reducerWithInitialState } from 'typescript-fsa-reducers'
-import web3 from 'web3'
+import Web3 from 'web3'
 
 export enum WalletConnectedNetWork {
   main = 1,
@@ -44,7 +44,7 @@ const SET_PRIVACY_MODE_STATUS = 'setMetamaskPrivacyMode'
  */
 
 const factory = actionCreatorFactory('@@redux-web3')
-export const setWeb3Instance = factory<{ web3: web3 }>(SET_WEB3_INSTANCE)
+export const setWeb3Instance = factory<{ web3: Web3 }>(SET_WEB3_INSTANCE)
 export const setUserWlletAddress = factory<{ address: string }>(
   SET_USER_ADDRESS,
 )
@@ -84,11 +84,11 @@ export const updateWeb3 = () => async (
 ) => {
   let instance = getState().web3.web3Instance
   const { status } = getState().web3
-  if (typeof web3.givenProvider === 'undefined') {
+  if (typeof Web3.givenProvider === 'undefined') {
     dispatch(setStatus({ status: WalletStatus.walletNotFound }))
   } else {
     if (!instance) {
-      instance = new web3(web3.givenProvider)
+      instance = new Web3(Web3.givenProvider)
       dispatch(setWeb3Instance({ web3: instance }))
     }
 
@@ -101,7 +101,7 @@ export const updateWeb3 = () => async (
       status === WalletStatus.uninitialized ||
       status === WalletStatus.walletNotFound
     ) {
-      instance.setProvider(web3.givenProvider)
+      instance.setProvider(Web3.givenProvider)
     }
     const address = await instance.eth.getAccounts()
     if (address.length === 0) {
