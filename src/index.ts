@@ -85,7 +85,7 @@ export const updateWeb3 = () => async (
 ) => {
   let instance = getState().web3.web3Instance
   const { status } = getState().web3
-  if (typeof Web3.givenProvider === 'undefined') {
+  if (!Web3.givenProvider) {
     dispatch(setStatus({ status: WalletStatus.walletNotFound }))
   } else {
     if (!instance) {
